@@ -15,23 +15,12 @@ html, body { width:100%; height:100%; overflow:hidden; background:#000; font-fam
 #mk-left { position:absolute; top:0; left:0; bottom:0; width:4%; background:linear-gradient(to right,#000 20%,transparent); z-index:1; }
 #mk-right { position:absolute; top:0; right:0; bottom:0; width:4%; background:linear-gradient(to left,#000 20%,transparent); z-index:1; }
 #vig { position:fixed; inset:0; z-index:2; pointer-events:none; background:radial-gradient(ellipse at 50% 50%,transparent 30%,rgba(0,0,0,.55) 100%); }
-#tap-gate {
-  position:fixed; inset:0; z-index:20;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  background:#000; cursor:pointer; -webkit-tap-highlight-color:transparent;
-  gap:18px;
-}
+#tap-gate { position:fixed; inset:0; z-index:20; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#000; cursor:pointer; -webkit-tap-highlight-color:transparent; gap:18px; }
 #tap-gate .gate-emoji { font-size:clamp(60px,15vw,90px); animation:bounce 1.4s ease-in-out infinite; }
 #tap-gate p { font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(22px,5.5vw,36px); letter-spacing:.08em; color:rgba(255,255,255,.9); text-transform:uppercase; pointer-events:none; animation:tapPulse 2s ease-in-out infinite; }
 @keyframes tapPulse { 0%,100%{opacity:.5} 50%{opacity:1} }
 @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-14px)} }
-#overlay {
-  position:fixed; inset:0; z-index:10;
-  display:flex; flex-direction:column; align-items:center; justify-content:center;
-  text-align:center; padding:28px 22px;
-  pointer-events:none; opacity:0; transition:opacity 1.6s ease;
-  background:rgba(0,0,0,.6);
-}
+#overlay { position:fixed; inset:0; z-index:10; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:28px 22px; pointer-events:none; opacity:0; transition:opacity 1.6s ease; background:rgba(0,0,0,.6); }
 #overlay.visible { opacity:1; pointer-events:auto; }
 #overlay.visible .ov-emoji   { animation:popIn .6s .1s  ease both; }
 #overlay.visible .ov-names   { animation:rise  1.0s .4s ease both; }
@@ -41,52 +30,13 @@ html, body { width:100%; height:100%; overflow:hidden; background:#000; font-fam
 #overlay.visible #accept-btn { animation:popIn .8s  2.3s ease both; }
 #overlay.visible .btn-note   { animation:rise  .7s  2.9s ease both; }
 .ov-emoji { font-size:clamp(44px,11vw,76px); opacity:0; display:block; margin-bottom:4px; }
-.ov-names {
-  font-family:'Pacifico',cursive;
-  font-size:clamp(32px,8.5vw,64px);
-  color:#fff; letter-spacing:.02em; line-height:1.15;
-  display:block; opacity:0;
-  text-shadow:0 3px 30px rgba(0,0,0,1),0 0 60px rgba(0,0,0,.9);
-}
-.ov-big {
-  font-family:'Nunito',sans-serif; font-weight:900;
-  font-size:clamp(18px,4.5vw,30px);
-  color:rgba(255,255,255,.95); letter-spacing:.04em; line-height:1.7;
-  margin-top:14px; opacity:0;
-  text-shadow:0 2px 20px rgba(0,0,0,1);
-}
-.ov-role {
-  font-family:'Pacifico',cursive;
-  font-size:clamp(26px,6.5vw,50px);
-  color:#7EB8FF;
-  letter-spacing:.04em; display:block; margin-top:10px; opacity:0;
-  text-shadow:0 3px 24px rgba(0,0,0,1),0 0 40px rgba(100,160,255,.4);
-}
-.ov-sub {
-  font-family:'Nunito',sans-serif; font-weight:700;
-  font-size:clamp(13px,2.8vw,19px);
-  color:rgba(255,255,255,.7); letter-spacing:.06em;
-  margin-top:8px; opacity:0;
-}
-#accept-btn {
-  display:inline-block; margin-top:26px; padding:17px 50px;
-  background:rgba(126,184,255,.15);
-  border:2px solid rgba(126,184,255,.8);
-  color:#7EB8FF;
-  font-family:'Nunito',sans-serif; font-weight:900;
-  font-size:clamp(17px,4.2vw,26px);
-  letter-spacing:.12em; text-transform:uppercase; text-decoration:none;
-  cursor:pointer; opacity:0; border-radius:60px;
-  transition:background .3s,transform .15s;
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-}
+.ov-names { font-family:'Pacifico',cursive; font-size:clamp(32px,8.5vw,64px); color:#fff; letter-spacing:.02em; line-height:1.15; display:block; opacity:0; text-shadow:0 3px 30px rgba(0,0,0,1),0 0 60px rgba(0,0,0,.9); }
+.ov-big { font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(18px,4.5vw,30px); color:rgba(255,255,255,.95); letter-spacing:.04em; line-height:1.7; margin-top:14px; opacity:0; text-shadow:0 2px 20px rgba(0,0,0,1); }
+.ov-role { font-family:'Pacifico',cursive; font-size:clamp(26px,6.5vw,50px); color:#7EB8FF; letter-spacing:.04em; display:block; margin-top:10px; opacity:0; text-shadow:0 3px 24px rgba(0,0,0,1),0 0 40px rgba(100,160,255,.4); }
+.ov-sub { font-family:'Nunito',sans-serif; font-weight:700; font-size:clamp(13px,2.8vw,19px); color:rgba(255,255,255,.7); letter-spacing:.06em; margin-top:8px; opacity:0; }
+#accept-btn { display:inline-block; margin-top:26px; padding:17px 50px; background:rgba(126,184,255,.15); border:2px solid rgba(126,184,255,.8); color:#7EB8FF; font-family:'Nunito',sans-serif; font-weight:900; font-size:clamp(17px,4.2vw,26px); letter-spacing:.12em; text-transform:uppercase; text-decoration:none; cursor:pointer; opacity:0; border-radius:60px; transition:background .3s,transform .15s; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
 #accept-btn:active { background:rgba(126,184,255,.32); transform:scale(.97); }
-.btn-note {
-  display:block; font-family:'Nunito',sans-serif; font-weight:700;
-  font-size:clamp(11px,2.2vw,15px); letter-spacing:.2em;
-  color:rgba(255,255,255,.5); text-transform:uppercase;
-  margin-top:12px; pointer-events:none; opacity:0;
-}
+.btn-note { display:block; font-family:'Nunito',sans-serif; font-weight:700; font-size:clamp(11px,2.2vw,15px); letter-spacing:.2em; color:rgba(255,255,255,.5); text-transform:uppercase; margin-top:12px; pointer-events:none; opacity:0; }
 @keyframes rise  { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:translateY(0)} }
 @keyframes popIn { 0%{opacity:0;transform:scale(.7)} 70%{transform:scale(1.08)} 100%{opacity:1;transform:scale(1)} }
 </style>
@@ -100,7 +50,7 @@ html, body { width:100%; height:100%; overflow:hidden; background:#000; font-fam
 
 <div id="vid-wrap">
   <video id="bg-video" muted playsinline preload="auto">
-    <source src="videoplayback%20(1).mp4" type="video/mp4">
+    <source src="Wrestlemania.mp4" type="video/mp4">
   </video>
   <div id="mk-top"></div>
   <div id="mk-bottom"></div>
